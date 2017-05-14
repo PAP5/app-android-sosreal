@@ -14,11 +14,12 @@ public class PrincipalActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         Bundle dados = i.getExtras();
-        TextView id = (TextView) findViewById(R.id.id);
+
+        TextView id = (TextView) findViewById(R.id.lblId);
         TextView usuario = (TextView) findViewById(R.id.usuario);
         TextView email = (TextView) findViewById(R.id.email);
 
-        id.setText(dados.getInt("id",0));
+        id.setText(String.valueOf(dados.getInt("id")));
         usuario.setText(dados.getString("usuario"));
         email.setText(dados.getString("email"));
     }
