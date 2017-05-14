@@ -50,6 +50,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void criarConta(View view){
+        Intent i = new Intent(this,CriarUsuarioActivity.class);
+        startActivity(i);
+        finish();
+    }
+
 
 
 }

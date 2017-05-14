@@ -6,4 +6,10 @@
     <string name="entrar">Entrar</string>
     <string name="erroLogin">Dados incorretos, tente novamente.</string>
     <string name="novaConta">Crie sua conta</string>
+    <string name="confirmarSenha">Confirmar senha</string>
+    <string name="email">E-mail</string>
+    <string name="proximo">Próximo</string>
+    <string name="erroSenhas">Senhas incompatíveis</string>
+    <string name="erroVazio">Dados incompletos</string>
+
 </resources>

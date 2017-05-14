@@ -6,16 +6,8 @@
     android:layout_height="match_parent"
     tools:context="pap.com.sosreal.MainActivity">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo100x"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"/>
-
     <TextView
-        android:id="@+id/lblUsuario"
+        android:id="@+id/lblNovoUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -25,28 +17,29 @@
         android:layout_below="@id/logo"/>
 
     <EditText
-        android:id="@+id/txtUsuario"
+        android:id="@+id/txtNovoUsuario"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:layout_below="@id/lblUsuario"/>
+        android:layout_below="@id/lblNovoUsuario"/>
+
     <TextView
-        android:id="@+id/lblSenha"
+        android:id="@+id/lblNovoEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:text="@string/senha"
+        android:text="@string/email"
         android:textSize="20dp"
-        android:layout_below="@id/txtUsuario"/>
+        android:layout_below="@id/txtNovoUsuario"/>
 
     <EditText
-        android:id="@+id/txtSenha"
+        android:id="@+id/txtNovoEmail"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:layout_below="@id/lblSenha"
-        android:inputType="textPassword"/>
+        android:inputType="textEmailAddress"
+        android:layout_below="@id/lblNovoEmail"/>
 
     <TextView
         android:id="@+id/lblErro"
@@ -57,42 +50,20 @@
         android:text=""
         android:textColor="@color/colorVermelho"
         android:textSize="18dp"
-        android:layout_below="@id/txtSenha"/>
+        android:layout_below="@id/txtNovoEmail"/>
 
     <Button
-        android:id="@+id/btnEntrar"
+        android:id="@+id/btnProximo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/entrar"
+        android:text="@string/proximo"
         android:layout_marginTop="5dp"
         android:layout_below="@id/lblErro"
         android:background="@color/colorLink"
         android:textColor="@color/colorBranco"
         android:layout_centerInParent="true"
-        android:onClick="entrar"/>
+        android:onClick="proximo"/>
 
-    <TextView
-        android:id="@+id/lblNovaConta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="10dp"
-        android:text="@string/novaConta"
-        android:textColor="@color/colorLink"
-        android:textSize="18dp"
-        android:layout_below="@id/btnEntrar"
-        android:onClick="criarConta"/>
 
-    <TextView
-        android:id="@+id/lblTrocarSenha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="10dp"
-        android:text="@string/trocarSenha"
-        android:textColor="@color/colorLink"
-        android:textSize="18dp"
-        android:layout_below="@id/lblNovaConta"
-        android:onClick="alterarSenha"/>
 
 </RelativeLayout>
