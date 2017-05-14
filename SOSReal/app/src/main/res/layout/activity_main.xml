@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pap.com.sosreal.MainActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo100x"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/lblUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/usuario"
+        android:textSize="20dp"
+        android:layout_below="@id/logo"/>
+
+    <EditText
+        android:id="@+id/txtUsuario"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/lblUsuario"/>
+    <TextView
+        android:id="@+id/lblSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/senha"
+        android:textSize="20dp"
+        android:layout_below="@id/txtUsuario"/>
+
+    <EditText
+        android:id="@+id/txtSenha"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/lblSenha"
+        android:inputType="textPassword"/>
+
+    <TextView
+        android:id="@+id/lblErro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:text=""
+        android:textColor="@color/colorVermelho"
+        android:textSize="18dp"
+        android:layout_below="@id/txtSenha"/>
+
+    <Button
+        android:id="@+id/btnEntrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/entrar"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/lblErro"
+        android:background="@color/colorLink"
+        android:textColor="@color/colorBranco"
+        android:layout_centerInParent="true"
+        android:onClick="entrar"/>
+
+    <TextView
+        android:id="@+id/lblNovaConta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/novaConta"
+        android:textColor="@color/colorLink"
+        android:textSize="18dp"
+        android:layout_below="@id/btnEntrar"/>
+
+    <TextView
+        android:id="@+id/lblTrocarSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/trocarSenha"
+        android:textColor="@color/colorLink"
+        android:textSize="18dp"
+        android:layout_below="@id/lblNovaConta"/>
+
+</RelativeLayout>

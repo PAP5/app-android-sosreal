@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SOSReal</string>
+    <string name="usuario">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="trocarSenha">Esqueceu sua senha?</string>
+    <string name="entrar">Entrar</string>
+    <string name="erroLogin">Dados incorretos, tente novamente.</string>
+    <string name="novaConta">Crie sua conta</string>
+</resources>
