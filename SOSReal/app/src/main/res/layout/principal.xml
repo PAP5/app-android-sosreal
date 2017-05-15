@@ -1,40 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pap.com.sosreal.MainActivity">
-
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="pap.com.sosreal.PrincipalActivity">
+    <Button
+        android:id="@+id/btnNovaDoacao"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo100x"
-        android:layout_alignParentTop="true"
-        android:layout_centerInParent="true"/>
-
-    <TextView
-        android:id="@+id/lblId"
-        android:layout_width="wrap_content"
+        android:text="@string/novaDoacao"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorBranco"
+        android:onClick="novaDoacao"/>
+    <Button
+        android:id="@+id/btnConsultarDoacao"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text=""
-        android:layout_below="@id/logo"/>
-
-    <TextView
-        android:id="@+id/usuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_below="@id/lblId"/>
-
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:layout_below="@id/usuario"/>
-
-
-
-</RelativeLayout>
+        android:text="@string/consultarDoacao"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorBranco"
+        android:onClick="consultarDoacao"/>
+</LinearLayout>

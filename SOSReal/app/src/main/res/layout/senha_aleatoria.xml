@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pap.com.sosreal.SenhaAleatoriaActivity">
+
+    <TextView
+        android:id="@+id/lblExplicar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/explicarEsqueciSenha"
+        android:textSize="20dp"
+        android:textColor="@color/colorVermelho"
+        />
+
+    <TextView
+        android:id="@+id/lblEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/email"
+        android:layout_below="@id/lblExplicar"
+        android:textSize="20dp"
+        />
+
+    <EditText
+        android:id="@+id/txtEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/lblEmail"/>
+
+    <Button
+        android:id="@+id/btnConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirmar"
+        android:layout_marginTop="35dp"
+        android:layout_below="@id/txtEmail"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorBranco"
+        android:layout_centerInParent="true"
+        android:onClick="trocarSenha"/>
+
+
+
+
+
+</RelativeLayout>

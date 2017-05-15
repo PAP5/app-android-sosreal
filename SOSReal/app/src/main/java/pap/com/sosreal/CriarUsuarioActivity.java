@@ -13,7 +13,7 @@ public class CriarUsuarioActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.criarusuario);
+        setContentView(R.layout.criar_usuario);
 
     }
 
@@ -36,8 +36,12 @@ public class CriarUsuarioActivity extends AppCompatActivity {
             lblErro.setText(R.string.erroVazio);
         }
         else{
-            Intent i = new Intent(this,MainActivity.class);
-            startActivity(i);
+            Bundle dados = new Bundle();
+            dados.putString("senha",senhaTxt);
+            dados.putString("usuario",usuarioTxt);
+            Intent returnIntent = new Intent();
+            returnIntent.putExtras(dados);
+            setResult(Activity.RESULT_OK,returnIntent);
             finish();
         }
 

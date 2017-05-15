@@ -19,6 +19,8 @@
         <activity android:name=".PrincipalActivity"/>
         <activity android:name=".CriarUsuarioActivity"/>
         <activity android:name=".CriarPerfilActivity"/>
+        <activity android:name=".SenhaAleatoriaActivity"/>
+
     </application>
 
 </manifest>

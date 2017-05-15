@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pap.com.sosreal.MainActivity">
+    tools:context="pap.com.sosreal.CriarPerfilActivity">
 
     <TextView
         android:id="@+id/lblNovoUsuario"
@@ -59,7 +59,7 @@
         android:text="@string/proximo"
         android:layout_marginTop="5dp"
         android:layout_below="@id/lblErro"
-        android:background="@color/colorLink"
+        android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorBranco"
         android:layout_centerInParent="true"
         android:onClick="proximo"/>

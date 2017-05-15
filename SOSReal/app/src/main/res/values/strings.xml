@@ -9,7 +9,11 @@
     <string name="confirmarSenha">Confirmar senha</string>
     <string name="email">E-mail</string>
     <string name="proximo">Próximo</string>
+    <string name="confirmar">Confirmar</string>
     <string name="erroSenhas">Senhas incompatíveis</string>
     <string name="erroVazio">Dados incompletos</string>
+    <string name="explicarEsqueciSenha">Uma nova senha será gerada de forma aleatória e enviada para o seguinte endereço de e-mail:</string>
+    <string name="novaDoacao">Nova doação</string>
+    <string name="consultarDoacao">Consultar doações</string>
 
 </resources>
