@@ -15,5 +15,9 @@
     <string name="explicarEsqueciSenha">Uma nova senha será gerada de forma aleatória e enviada para o seguinte endereço de e-mail:</string>
     <string name="novaDoacao">Nova doação</string>
     <string name="consultarDoacao">Consultar doações</string>
+    <string name="novaSenha">Nova senha</string>
+    <string name="confirmarNovaSenha">Confirmar nova senha</string>
+    <string name="senhaAtual">Senha atual</string>
+    <string name="erroEmail">E-mail inválido</string>
 
 </resources>

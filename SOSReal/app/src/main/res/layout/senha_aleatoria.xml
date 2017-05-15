@@ -35,13 +35,24 @@
         android:layout_marginTop="5dp"
         android:layout_below="@id/lblEmail"/>
 
+    <TextView
+        android:id="@+id/lblErro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtEmail"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text=""
+        android:textColor="@color/colorVermelho"
+        android:textSize="18dp" />
+
     <Button
         android:id="@+id/btnConfirmar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/confirmar"
-        android:layout_marginTop="35dp"
-        android:layout_below="@id/txtEmail"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/lblErro"
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorBranco"
         android:layout_centerInParent="true"

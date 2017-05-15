@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 
 public class CriarUsuarioActivity extends AppCompatActivity {
     @Override
@@ -35,6 +38,10 @@ public class CriarUsuarioActivity extends AppCompatActivity {
         else if(senhaTxt.equals("") || confirmarSenhaTxt.equals("") || emailTxt.equals("") || usuarioTxt.equals("")){
             lblErro.setText(R.string.erroVazio);
         }
+        else if(!MainActivity.validar(emailTxt)){
+            lblErro.setText(R.string.erroEmail);
+        }
+
         else{
             Bundle dados = new Bundle();
             dados.putString("senha",senhaTxt);
@@ -46,6 +53,8 @@ public class CriarUsuarioActivity extends AppCompatActivity {
         }
 
     }
+
+
 
 
 

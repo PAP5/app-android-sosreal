@@ -9,13 +9,15 @@ import android.view.View;
 
 
 public class PrincipalActivity extends AppCompatActivity {
+    Bundle dados;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.principal);
 
         Intent i = getIntent();
-        Bundle dados = i.getExtras();
+        this.dados = i.getExtras();
     }
 
     @Override
@@ -25,7 +27,8 @@ public class PrincipalActivity extends AppCompatActivity {
     }
 
     private void trocarSenha(MenuItem item) {
-        Intent intent = new Intent(getBaseContext(), SenhaAleatoriaActivity.class);
+        Intent intent = new Intent(getBaseContext(), TrocarSenhaActivity.class);
+        intent.putExtras(dados);
         startActivityForResult(intent, 2);
     }
 
@@ -42,7 +45,7 @@ public class PrincipalActivity extends AppCompatActivity {
     }
 
     public void novaDoacao(View view){
-        
+
     }
 
     public void consultarDoacao(View view){

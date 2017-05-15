@@ -20,6 +20,7 @@
         <activity android:name=".CriarUsuarioActivity"/>
         <activity android:name=".CriarPerfilActivity"/>
         <activity android:name=".SenhaAleatoriaActivity"/>
+        <activity android:name=".TrocarSenhaActivity"/>
 
     </application>
 

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pap.com.sosreal.CriarUsuarioActivity">
+
+    <TextView
+        android:id="@+id/lblSenhaAtual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:text="@string/senhaAtual"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/txtSenhaAtual"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lblSenhaAtual"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/lblNovaSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtSenhaAtual"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/novaSenha"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/txtNovaSenha"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lblNovaSenha"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/lblConfirmarNovaSenha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtNovaSenha"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/confirmarNovaSenha"
+        android:textSize="20dp" />
+
+    <EditText
+        android:id="@+id/txtConfirmarNovaSenha"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lblConfirmarNovaSenha"
+        android:inputType="textPassword" />
+
+    <TextView
+        android:id="@+id/lblErro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtConfirmarNovaSenha"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text=""
+        android:textColor="@color/colorVermelho"
+        android:textSize="18dp" />
+
+    <Button
+        android:id="@+id/btnConfirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lblErro"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"
+        android:background="@color/colorPrimaryDark"
+        android:onClick="confirmar"
+        android:text="@string/confirmar"
+        android:textColor="@color/colorBranco" />
+
+
+</RelativeLayout>

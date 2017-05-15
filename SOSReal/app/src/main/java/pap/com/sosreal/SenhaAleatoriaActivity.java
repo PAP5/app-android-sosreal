@@ -4,6 +4,8 @@ package pap.com.sosreal;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 public class SenhaAleatoriaActivity extends AppCompatActivity {
     @Override
@@ -13,7 +15,17 @@ public class SenhaAleatoriaActivity extends AppCompatActivity {
     }
 
     public void trocarSenha(View view){
-        finish();
+        EditText email = (EditText) findViewById(R.id.txtEmail);
+        TextView lblErro = (TextView) findViewById(R.id.lblErro);
+
+        String emailTxt = email.getText().toString();
+        if(!MainActivity.validar(emailTxt)){
+           lblErro.setText(R.string.erroEmail);
+        }
+        else{
+            finish();
+        }
+
     }
 
     public String gerarSenhaAleatoria() {
