@@ -41,7 +41,7 @@ public class UsuarioService {
         }
     }
 
-    private static final String URL = "http://pap5.ga/ws/usuario";
+    private static String URL = "http://pap5.ga/ws/usuario";
 
     public List<Usuario> getAll() {
         List<Usuario> usuarios = new ArrayList<>();
@@ -85,6 +85,31 @@ public class UsuarioService {
         } finally {
             urlConnection.disconnect();
         }
+        return usu;
+    }
+
+    public Usuario getByUsuarioESenha(String usuario, String senha) {
+        Usuario usu = new Usuario();
+        HttpURLConnection urlConnection = null;
+
+        URL = "http://pap5.ga/ws/login";
+        try {
+            URL url = new URL(URL + "/" + usuario + "/" + senha);
+            urlConnection = (HttpURLConnection) url.openConnection();
+
+            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            Scanner s = new Scanner(in);
+            String conteudo = s.useDelimiter("\\A").next();
+
+            Gson gson = new Gson();
+            usu = gson.fromJson(conteudo, Usuario.class);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            urlConnection.disconnect();
+        }
+
+        URL = "http://pap5.ga/ws/usuario";
         return usu;
     }
 

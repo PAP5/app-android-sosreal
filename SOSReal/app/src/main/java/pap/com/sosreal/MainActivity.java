@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -17,9 +19,9 @@ import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
     private Usuario usu = new Usuario();
-    private List<Usuario> lista = new ArrayList<Usuario>();
     private UsuarioService service = new UsuarioService();
-
+    String usuarioTxtConteudo;
+    String senhaTxtConteudo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,18 +30,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void entrar(View view) {
-        EditText usuario = (EditText) findViewById(R.id.txtUsuario);
-        EditText senha = (EditText) findViewById(R.id.txtSenha);
+        EditText usuarioTxt = (EditText) findViewById(R.id.txtUsuario);
+        EditText senhaTxt = (EditText) findViewById(R.id.txtSenha);
         TextView text = (TextView) findViewById(R.id.lblErro);
 
-        if (verificaUsuario() == true) {
-            new CarregarUsuario().execute();
-
-        } else if (senha.getText().toString().equals("") || usuario.getText().toString().equals("")) {
+        if (usuarioTxt.getText().toString().equals("") || senhaTxt.getText().toString().equals("")) {
             text.setText(R.string.erroVazio);
         } else {
-
-            text.setText(R.string.erroLogin);
+            new CarregarUsuario().execute();
         }
 
 
@@ -108,34 +106,45 @@ public class MainActivity extends AppCompatActivity {
         }
     }*/
 
-    private class CarregarUsuario extends AsyncTask<String, Void, Usuario> {
+    private class CarregarUsuario extends AsyncTask<String, String, Usuario> {
         private ProgressDialog dialog;
 
         @Override
         protected void onPreExecute() {
             dialog = new ProgressDialog(MainActivity.this);
+            usuarioTxtConteudo = ((EditText) findViewById(R.id.txtUsuario)).getText().toString();
+            senhaTxtConteudo = ((EditText) findViewById(R.id.txtSenha)).getText().toString();
             dialog.show();
         }
 
         @Override
         protected void onPostExecute(Usuario usuario) {
             usu = usuario;
-            Bundle dados = new Bundle();
-            dados.putString("usuario", usu.getUsuario());
-            dados.putString("email", usu.getEmail());
-            dados.putInt("id", usu.getId());
 
-            Intent i = new Intent(MainActivity.this, PrincipalActivity.class);
-            i.putExtras(dados);
-            startActivity(i);
-            dialog.dismiss();
-            dialog = null;
-            finish();
+            if (usu.getId() != 0) {
+                Bundle dados = new Bundle();
+                dados.putString("usuario", usu.getUsuario());
+                dados.putString("email", usu.getEmail());
+                dados.putInt("id", usu.getId());
+
+                Intent i = new Intent(MainActivity.this, PrincipalActivity.class);
+                i.putExtras(dados);
+                startActivity(i);
+                dialog.dismiss();
+                dialog = null;
+                finish();
+            } else {
+                ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroLogin);
+                dialog.dismiss();
+                dialog = null;
+            }
+
         }
 
         @Override
         protected Usuario doInBackground(String... params) {
-            return service.getById(1);
+
+            return service.getByUsuarioESenha(usuarioTxtConteudo, senhaTxtConteudo);
         }
     }
 }
