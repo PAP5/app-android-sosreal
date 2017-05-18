@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
@@ -84,27 +85,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static boolean validar(String email) {
-        boolean isEmailIdValid = false;
-        if (email != null && email.length() > 0) {
-            String expression = "^[\\w\\.-]+@([\\w\\-]+\\.)+[A-Z]{2,4}$";
-            Pattern pattern = Pattern.compile(expression, Pattern.CASE_INSENSITIVE);
-            Matcher matcher = pattern.matcher(email);
-            if (matcher.matches()) {
-                isEmailIdValid = true;
-            }
-        }
-        return isEmailIdValid;
-    }
 
-    /*@Override
-    public void onDestroy() {
-        super.onDestroy();
-        if (dialog != null) {
-            dialog.dismiss();
-            dialog = null;
-        }
-    }*/
 
     private class CarregarUsuario extends AsyncTask<String, String, Usuario> {
         private ProgressDialog dialog;
@@ -121,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
         protected void onPostExecute(Usuario usuario) {
             usu = usuario;
 
-            if (usu.getId() != 0) {
+            if (usu != null) {
                 Bundle dados = new Bundle();
                 dados.putString("usuario", usu.getUsuario());
                 dados.putString("email", usu.getEmail());
@@ -134,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 dialog = null;
                 finish();
             } else {
+                Log.d("passou", "passou");
                 ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroLogin);
                 dialog.dismiss();
                 dialog = null;
@@ -143,8 +125,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected Usuario doInBackground(String... params) {
-
-            return service.getByUsuarioESenha(usuarioTxtConteudo, senhaTxtConteudo);
+            try {
+                return service.getByUsuarioESenha(usuarioTxtConteudo, senhaTxtConteudo);
+            }catch (RuntimeException e){
+                return null;
+            }
         }
     }
 }

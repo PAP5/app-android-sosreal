@@ -1,6 +1,8 @@
 package pap.com.sosreal;
 
 
+import android.util.Log;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import java.io.BufferedInputStream;
@@ -17,17 +19,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UsuarioService {
-    Usuario usu = new Usuario();
+    private Usuario usu = new Usuario();
 
-    /*public Usuario buscarUsuario(int id) {
-        usu.setId(1);
-        usu.setEmail("email@email.com");
-        usu.setSenha("loco");
-        usu.setUsuario("loco");
-
-        return usu;
-    }
-    */
     public Usuario buscarPorUsuESenha(String usuario, String senha) throws IllegalArgumentException {
         usu.setId(1);
         usu.setEmail("email@email.com");
@@ -113,9 +106,8 @@ public class UsuarioService {
         return usu;
     }
 
-    public void post(Usuario usuario) {
+    public void post(Object usuario) {
         HttpURLConnection urlConnection = null;
-
         try {
             URL url = new URL(URL);
             urlConnection = (HttpURLConnection) url.openConnection();

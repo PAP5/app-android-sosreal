@@ -19,5 +19,6 @@
     <string name="confirmarNovaSenha">Confirmar nova senha</string>
     <string name="senhaAtual">Senha atual</string>
     <string name="erroEmail">E-mail inválido</string>
+    <string name="erroSenhaAntiga">Senha atual inválida</string>
 
 </resources>
