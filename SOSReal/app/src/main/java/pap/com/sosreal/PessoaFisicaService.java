@@ -83,7 +83,7 @@ public class PessoaFisicaService {
 
             Gson gson = new Gson();
             String json = gson.toJson(PessoaFisica);
-
+            Log.d("json",json);
             w.write(json);
             w.close();
 

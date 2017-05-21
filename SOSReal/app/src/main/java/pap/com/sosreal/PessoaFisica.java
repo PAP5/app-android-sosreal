@@ -5,24 +5,24 @@ import java.util.Date;
 public class PessoaFisica {
     private String nome;
     private char sexo;
-    private Date Datanasc;
-    private String CPF;
-    private String telCel;
-    private String telCont;
-    private Date Dataincricao;
+    private Date datanasc;
+    private String cpf;
+    private String telcel;
+    private String telcont;
+    private Date datainscricao;
     private Usuario usuario;
 
     public PessoaFisica(String nome, char sexo, Date datanasc,
-                        String CPF, String telCel, String telCont,
-                        Date dataincricao, Usuario usuario) {
+                        String cpf, String telcel, String telcont,
+                        Date datainscricao, Usuario usuario) {
 
         this.nome = nome;
         this.sexo = sexo;
-        Datanasc = datanasc;
-        this.CPF = CPF;
-        this.telCel = telCel;
-        this.telCont = telCont;
-        Dataincricao = dataincricao;
+        this.datanasc = datanasc;
+        this.cpf = cpf;
+        this.telcel = telcel;
+        this.telcont = telcont;
+        this.datainscricao = datainscricao;
         this.usuario = usuario;
 
     }
@@ -46,44 +46,44 @@ public class PessoaFisica {
         this.sexo = sexo;
     }
 
-    public Date getDatanasc() {
-        return Datanasc;
+    public Date getdatanasc() {
+        return datanasc;
     }
 
-    public void setDatanasc(Date datanasc) {
-        Datanasc = datanasc;
+    public void setdatanasc(Date datanasc) {
+        this.datanasc = datanasc;
     }
 
-    public String getCPF() {
-        return CPF;
+    public String getcpf() {
+        return cpf;
     }
 
-    public void setCPF(String CPF) {
-        this.CPF = CPF;
+    public void setcpf(String cpf) {
+        this.cpf = cpf;
     }
 
-    public String getTelCel() {
-        return telCel;
+    public String gettelcel() {
+        return telcel;
     }
 
-    public void setTelCel(String telCel) {
-        this.telCel = telCel;
+    public void settelcel(String telcel) {
+        this.telcel = telcel;
     }
 
-    public String getTelCont() {
-        return telCont;
+    public String gettelcont() {
+        return telcont;
     }
 
-    public void setTelCont(String telCont) {
-        this.telCont = telCont;
+    public void settelcont(String telcont) {
+        this.telcont = telcont;
     }
 
-    public Date getDataincricao() {
-        return Dataincricao;
+    public Date getdatainscricao() {
+        return datainscricao;
     }
 
-    public void setDataincricao(Date dataincricao) {
-        Dataincricao = dataincricao;
+    public void setdatainscricao(Date datainscricao) {
+        this.datainscricao = datainscricao;
     }
 
     public Usuario getUsuario() {

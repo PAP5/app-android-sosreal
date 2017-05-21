@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
-public class CriarPerfilpf2Activity extends AppCompatActivity {
+public class CriarPerfilpj2Activity extends AppCompatActivity {
     private Bundle dados;
     private PessoaFisicaService service = new PessoaFisicaService();
     private UsuarioService serviceUsu = new UsuarioService();
@@ -48,72 +48,51 @@ public class CriarPerfilpf2Activity extends AppCompatActivity {
         private String CPF;
         private String telCont;
         private String telCel;
-        private Bundle dadosUsu = new Bundle();
-        private Usuario usu;
 
         @Override
         protected void onPreExecute() {
-
-            dialog = new ProgressDialog(CriarPerfilpf2Activity.this);
+            dialog = new ProgressDialog(CriarPerfilpj2Activity.this);
 
             nome = dados.getString("nome");
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
             try {
-                Date penis = format.parse(dados.getString("dataNasc"));
-                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                String data = df.format(penis);
-                datanasc = df.parse(data);
 
-                Date vagina = new Date();
-                String dataVag = df.format(vagina);
-                datainsc = df.parse(dataVag);
-
-                sexo = dados.getString("sexo").charAt(0);
-                CPF = ((EditText) findViewById(R.id.txtCPF)).getText().toString();
-                telCont = ((EditText) findViewById(R.id.txtTelCont)).getText().toString();
-                telCel = ((EditText) findViewById(R.id.txtTelCel)).getText().toString();
-
-                dialog.show();
+                datanasc = format.parse(dados.getString("dataNasc"));
             } catch (Exception e) {
                 ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroCadastro);
                 Log.d("erro", e.getMessage());
             }
+            datainsc = new Date();
+            sexo = dados.getString("sexo").charAt(0);
+            CPF = ((EditText) findViewById(R.id.txtCPF)).getText().toString();
+            telCont = ((EditText) findViewById(R.id.txtTelCont)).getText().toString();
+            telCel = ((EditText) findViewById(R.id.txtTelCel)).getText().toString();
 
-        }
-
-
-        @Override
-        protected Void doInBackground(String... params) {
-            try {
-                usu = serviceUsu.getById(dados.getInt("id"));
-                PessoaFisica pf = new PessoaFisica(nome, sexo, datanasc,
-                        CPF, telCel, telCont,
-                        datainsc, usu);
-                service.post(pf);
-
-
-            } catch (RuntimeException e) {
-                Log.d("erro", e.getMessage());
-            }
-
-            return null;
+            dialog.show();
         }
 
         @Override
         protected void onPostExecute(Void v) {
-
-            Intent i = new Intent(CriarPerfilpf2Activity.this, PrincipalActivity.class);
-
-
-            dadosUsu.putString("usuario", usu.getUsuario());
-            dadosUsu.putString("email", usu.getEmail());
-            dadosUsu.putInt("id", usu.getId());
-            i.putExtras(dadosUsu);
-
-            startActivity(i);
             dialog.dismiss();
             dialog = null;
             finish();
+        }
+
+        @Override
+        protected Void doInBackground(String... params) {
+            try {
+                Usuario usu = new Usuario();
+                usu = serviceUsu.getById(dados.getInt("id"));
+                PessoaFisica pf = new PessoaFisica(nome, sexo, datanasc,
+                        CPF, telCel, telCont,
+                        datainsc, usu);
+                ;
+                service.post(pf);
+
+            } catch (RuntimeException e) {
+                Log.d("erro", e.getMessage());
+            }
+            return null;
         }
     }
 }

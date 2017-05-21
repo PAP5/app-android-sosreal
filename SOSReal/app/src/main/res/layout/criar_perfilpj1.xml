@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pap.com.sosreal.CriarPerfilpj1Activity">
+
+    <TextView
+        android:id="@+id/lblNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/nome"
+        android:textSize="20dp"
+        android:layout_below="@id/logo"/>
+
+    <EditText
+        android:id="@+id/txtNome"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/lblNome"/>
+
+    <TextView
+        android:id="@+id/lblSobrenome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/sobrenome"
+        android:textSize="20dp"
+        android:layout_below="@id/txtNome"/>
+
+    <EditText
+        android:id="@+id/txtSobrenome"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/lblSobrenome"/>
+
+    <TextView
+        android:id="@+id/lblDataNasc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/dataNasc"
+        android:textSize="20dp"
+        android:layout_below="@id/txtSobrenome"/>
+
+    <EditText
+        android:id="@+id/txtDataNasc"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:inputType="date"
+        android:layout_below="@id/lblDataNasc" />
+
+    <TextView
+        android:id="@+id/lblSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/sexo"
+        android:textSize="20dp"
+        android:layout_below="@id/txtDataNasc"/>
+
+    <Spinner
+        android:id="@+id/spinner_sexo"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/lblSexo"/>
+
+
+    <TextView
+        android:id="@+id/lblErro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:text=""
+        android:textColor="@color/colorVermelho"
+        android:textSize="18dp"
+        android:layout_below="@id/spinner_sexo"/>
+
+    <Button
+        android:id="@+id/btnProximo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/proximo"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/lblErro"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorBranco"
+        android:layout_centerInParent="true"
+        android:onClick="proximo"/>
+
+
+
+</RelativeLayout>

@@ -10,7 +10,7 @@ import android.widget.Button;
 
 
 public class PrincipalActivity extends AppCompatActivity {
-    Bundle dados;
+    private Bundle dados;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

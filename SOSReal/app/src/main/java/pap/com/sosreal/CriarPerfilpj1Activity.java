@@ -21,8 +21,11 @@ import java.util.Date;
 
 import java.util.Calendar;
 
-public class CriarPerfilpf1Activity extends AppCompatActivity {
+public class CriarPerfilpj1Activity extends AppCompatActivity {
+
+    private DateFormat dhf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
     private DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+    private DateFormat hf = new SimpleDateFormat("HH:mm");
     Bundle dados = new Bundle();
 
 
@@ -63,7 +66,7 @@ public class CriarPerfilpf1Activity extends AppCompatActivity {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(CriarPerfilpf1Activity.this, dpd, date.get(Calendar.YEAR),
+                new DatePickerDialog(CriarPerfilpj1Activity.this, dpd, date.get(Calendar.YEAR),
                         date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
@@ -97,13 +100,13 @@ public class CriarPerfilpf1Activity extends AppCompatActivity {
                 dados.putString("sexo", "f");
             }
 
-            Intent i = new Intent(this, CriarPerfilpf2Activity.class);
+            Intent i = new Intent(this, CriarPerfilpj2Activity.class);
             i.putExtras(dados);
             startActivity(i);
-            finish();
         }
 
 
     }
 
 }
+
