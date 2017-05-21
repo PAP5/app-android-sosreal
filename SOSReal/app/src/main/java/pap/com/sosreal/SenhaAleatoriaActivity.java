@@ -19,7 +19,7 @@ public class SenhaAleatoriaActivity extends AppCompatActivity {
         TextView lblErro = (TextView) findViewById(R.id.lblErro);
 
         String emailTxt = email.getText().toString();
-        if(!Static.validar(emailTxt)){
+        if(!Static.validarEmail(emailTxt)){
            lblErro.setText(R.string.erroEmail);
         }
         else{

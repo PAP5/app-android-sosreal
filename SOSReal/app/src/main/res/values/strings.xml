@@ -20,5 +20,19 @@
     <string name="senhaAtual">Senha atual</string>
     <string name="erroEmail">E-mail inválido</string>
     <string name="erroSenhaAntiga">Senha atual inválida</string>
+    <string name="erroData">Data inválida</string>
+    <string name="nome">Nome</string>
+    <string name="dataNasc">Data de nascimento</string>
+    <string name="CPF">CPF</string>
+    <string name="sobrenome">Sobrenome</string>
+    <string name="sexo">Sexo</string>
+    <string name="telCont">Telefone de contato</string>
+    <string name="telCel">Telefone celular</string>
+    <string name="erroCadastro">Ocorreu um erro no cadastro</string>
+    <string-array name="sexo_array">
+        <item>Selecione</item>
+        <item>Masculino</item>
+        <item>Feminino</item>
+    </string-array>
 
 </resources>

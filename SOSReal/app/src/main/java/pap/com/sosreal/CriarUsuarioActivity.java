@@ -41,7 +41,7 @@ public class CriarUsuarioActivity extends AppCompatActivity {
             lblErro.setText(R.string.erroSenhas);
         } else if (senhaTxt.equals("") || confirmarSenhaTxt.equals("") || emailTxt.equals("") || usuarioTxt.equals("")) {
             lblErro.setText(R.string.erroVazio);
-        } else if (!Static.validar(emailTxt)) {
+        } else if (!Static.validarEmail(emailTxt)) {
             lblErro.setText(R.string.erroEmail);
         } else {
             new SalvarUsuario().execute();

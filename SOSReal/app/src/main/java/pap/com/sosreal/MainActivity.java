@@ -11,13 +11,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 
-import org.w3c.dom.Text;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class MainActivity extends AppCompatActivity {
     private Usuario usu = new Usuario();
     private UsuarioService service = new UsuarioService();
@@ -108,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
                 dados.putString("email", usu.getEmail());
                 dados.putInt("id", usu.getId());
 
-                Intent i = new Intent(MainActivity.this, PrincipalActivity.class);
+                Intent i = new Intent(MainActivity.this, CriarPerfilpf1Activity.class);
                 i.putExtras(dados);
                 startActivity(i);
                 dialog.dismiss();

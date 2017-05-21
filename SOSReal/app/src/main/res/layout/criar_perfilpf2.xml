@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pap.com.sosreal.CriarPerfilpf2Activity">
+
+
+    <TextView
+        android:id="@+id/lblCPF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/CPF"
+        android:textSize="20dp"
+        android:layout_below="@id/txtSobrenome"/>
+
+    <EditText
+        android:id="@+id/txtCPF"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:inputType="number"
+        android:layout_below="@id/lblCPF"/>
+
+    <TextView
+        android:id="@+id/lblTelCont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/telCont"
+        android:textSize="20dp"
+        android:layout_below="@id/txtCPF"/>
+
+    <EditText
+        android:id="@+id/txtTelCont"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:inputType="number"
+        android:layout_below="@id/lblTelCont"/>
+
+    <TextView
+        android:id="@+id/lblTelCel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/telCel"
+        android:textSize="20dp"
+        android:layout_below="@id/txtTelCont"/>
+
+    <EditText
+        android:id="@+id/txtTelCel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:inputType="number"
+        android:layout_below="@id/lblTelCel"/>
+
+    <TextView
+        android:id="@+id/lblErro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
+        android:text=""
+        android:textColor="@color/colorVermelho"
+        android:textSize="18dp"
+        android:layout_below="@id/txtTelCel"/>
+
+    <Button
+        android:id="@+id/btnCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/confirmar"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/lblErro"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorBranco"
+        android:layout_centerInParent="true"
+        android:onClick="confirmar"/>
+
+
+
+</RelativeLayout>
+
+
+
+
+

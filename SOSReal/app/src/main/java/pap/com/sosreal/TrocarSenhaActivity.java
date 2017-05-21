@@ -87,14 +87,12 @@ public class TrocarSenhaActivity extends AppCompatActivity {
                 dialog = null;
             } else {
                 Bundle dados2 = new Bundle();
-
                 dados2.putString("senha", usu.getSenha());
                 dados2.putString("usuario", usu.getUsuario());
                 dados2.putInt("id", usu.getId());
                 dados2.putString("email", usu.getEmail());
                 Intent returnIntent = new Intent();
                 returnIntent.putExtras(dados);
-
                 setResult(Activity.RESULT_OK, returnIntent);
                 finish();
             }

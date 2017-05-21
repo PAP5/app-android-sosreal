@@ -4,42 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pap.com.sosreal.CriarPerfilActivity">
+    tools:context="pap.com.sosreal.CriarPerfilpf1Activity">
 
     <TextView
-        android:id="@+id/lblNovoUsuario"
+        android:id="@+id/lblNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:text="@string/usuario"
+        android:text="@string/nome"
         android:textSize="20dp"
         android:layout_below="@id/logo"/>
 
     <EditText
-        android:id="@+id/txtNovoUsuario"
+        android:id="@+id/txtNome"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:layout_below="@id/lblNovoUsuario"/>
+        android:layout_below="@id/lblNome"/>
 
     <TextView
-        android:id="@+id/lblNovoEmail"
+        android:id="@+id/lblSobrenome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:text="@string/email"
+        android:text="@string/sobrenome"
         android:textSize="20dp"
-        android:layout_below="@id/txtNovoUsuario"/>
+        android:layout_below="@id/txtNome"/>
 
     <EditText
-        android:id="@+id/txtNovoEmail"
+        android:id="@+id/txtSobrenome"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:inputType="textEmailAddress"
-        android:layout_below="@id/lblNovoEmail"/>
+        android:layout_below="@id/lblSobrenome"/>
+
+    <TextView
+        android:id="@+id/lblDataNasc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/dataNasc"
+        android:textSize="20dp"
+        android:layout_below="@id/txtSobrenome"/>
+
+    <EditText
+        android:id="@+id/txtDataNasc"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:inputType="date"
+        android:layout_below="@id/lblDataNasc" />
+
+    <TextView
+        android:id="@+id/lblSexo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:text="@string/sexo"
+        android:textSize="20dp"
+        android:layout_below="@id/txtDataNasc"/>
+
+    <Spinner
+        android:id="@+id/spinner_sexo"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@id/lblSexo"/>
+
 
     <TextView
         android:id="@+id/lblErro"
@@ -50,7 +84,7 @@
         android:text=""
         android:textColor="@color/colorVermelho"
         android:textSize="18dp"
-        android:layout_below="@id/txtNovoEmail"/>
+        android:layout_below="@id/spinner_sexo"/>
 
     <Button
         android:id="@+id/btnProximo"
