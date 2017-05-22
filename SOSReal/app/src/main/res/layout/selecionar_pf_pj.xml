@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="pap.com.sosreal.SelecionarPfPjActivity">
+
+    <TextView
+        android:id="@+id/lblUsuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/selecionarPfPj"
+        android:textSize="20dp"
+        android:layout_below="@id/logo"/>
+
+    <Button
+        android:id="@+id/btnPF"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/pf"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorBranco"
+        android:onClick="pf"/>
+    <Button
+        android:id="@+id/btnPJ"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/pj"
+        android:layout_marginTop="25dp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorBranco"
+        android:onClick="pj"/>
+</LinearLayout>

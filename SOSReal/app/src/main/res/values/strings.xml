@@ -36,6 +36,10 @@
     <string name="CNPJ">CNPJ</string>
     <string name="erroCNPJ">CNPJ inválido</string>
     <string name="erroCPF">CPF inválido</string>
+    <string name="pf">Física</string>
+    <string name="pj">Jurídica</string>
+    <string name="selecionarPfPj">Você é uma pessoa</string>
+
     <string-array name="sexo_array">
         <item>Selecione</item>
         <item>Masculino</item>
