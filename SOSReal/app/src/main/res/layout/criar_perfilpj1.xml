@@ -7,72 +7,72 @@
     tools:context="pap.com.sosreal.CriarPerfilpj1Activity">
 
     <TextView
-        android:id="@+id/lblNome"
+        android:id="@+id/lblRazao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:text="@string/nome"
+        android:text="@string/razao"
         android:textSize="20dp"
         android:layout_below="@id/logo"/>
 
     <EditText
-        android:id="@+id/txtNome"
+        android:id="@+id/txtRazao"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:layout_below="@id/lblNome"/>
+        android:layout_below="@id/lblRazao"/>
 
     <TextView
-        android:id="@+id/lblSobrenome"
+        android:id="@+id/lblResponsavel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:text="@string/sobrenome"
+        android:text="@string/responsavel"
         android:textSize="20dp"
-        android:layout_below="@id/txtNome"/>
+        android:layout_below="@id/txtRazao"/>
 
     <EditText
-        android:id="@+id/txtSobrenome"
+        android:id="@+id/txtResponsavel"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:layout_below="@id/lblSobrenome"/>
+        android:layout_below="@id/lblResponsavel"/>
 
     <TextView
-        android:id="@+id/lblDataNasc"
+        android:id="@+id/lblInscricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:text="@string/dataNasc"
+        android:text="@string/inscricao"
         android:textSize="20dp"
-        android:layout_below="@id/txtSobrenome"/>
+        android:layout_below="@id/txtResponsavel"/>
 
     <EditText
-        android:id="@+id/txtDataNasc"
+        android:id="@+id/txtInscricao"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
         android:inputType="date"
-        android:layout_below="@id/lblDataNasc" />
+        android:layout_below="@id/lblInscricao" />
 
     <TextView
-        android:id="@+id/lblSexo"
+        android:id="@+id/lblTributo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:text="@string/sexo"
+        android:text="@string/tributo"
         android:textSize="20dp"
-        android:layout_below="@id/txtDataNasc"/>
+        android:layout_below="@id/txtInscricao"/>
 
     <Spinner
-        android:id="@+id/spinner_sexo"
+        android:id="@+id/spinner_tributo"
         android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_below="@id/lblSexo"/>
+        android:layout_below="@id/lblTributo"/>
 
 
     <TextView
@@ -84,7 +84,7 @@
         android:text=""
         android:textColor="@color/colorVermelho"
         android:textSize="18dp"
-        android:layout_below="@id/spinner_sexo"/>
+        android:layout_below="@id/spinner_tributo"/>
 
     <Button
         android:id="@+id/btnProximo"

@@ -29,10 +29,24 @@
     <string name="telCont">Telefone de contato</string>
     <string name="telCel">Telefone celular</string>
     <string name="erroCadastro">Ocorreu um erro no cadastro</string>
+    <string name="razao">Razão social</string>
+    <string name="responsavel">Responsável</string>
+    <string name="inscricao">Inscrição</string>
+    <string name="tributo">Tributo</string>
+    <string name="CNPJ">CNPJ</string>
+    <string name="erroCNPJ">CNPJ inválido</string>
+    <string name="erroCPF">CPF inválido</string>
     <string-array name="sexo_array">
         <item>Selecione</item>
         <item>Masculino</item>
         <item>Feminino</item>
+    </string-array>
+
+    <string-array name="tributo_array">
+        <item>Selecione</item>
+        <item>Contribuinte</item>
+        <item>Não contribuinte</item>
+        <item>Isento</item>
     </string-array>
 
 </resources>

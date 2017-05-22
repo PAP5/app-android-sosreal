@@ -34,7 +34,9 @@ public class CriarPerfilpf2Activity extends AppCompatActivity {
                 ((EditText) findViewById(R.id.txtTelCont)).getText().toString().isEmpty() ||
                 ((EditText) findViewById(R.id.txtTelCel)).getText().toString().isEmpty()) {
             ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroVazio);
-        } else {
+        } else if(!Static.validarCPF(((EditText) findViewById(R.id.txtCPF)).getText().toString())){
+            ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroCPF);
+        }else{
             new CadastrarPF().execute();
         }
     }

@@ -17,82 +17,100 @@ import java.util.Date;
 
 public class CriarPerfilpj2Activity extends AppCompatActivity {
     private Bundle dados;
-    private PessoaFisicaService service = new PessoaFisicaService();
+    private PessoaJuridicaService service = new PessoaJuridicaService();
     private UsuarioService serviceUsu = new UsuarioService();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.criar_perfilpf2);
+        setContentView(R.layout.criar_perfilpj2);
 
         Intent i = getIntent();
         dados = i.getExtras();
     }
 
     public void confirmar(View view) {
-        if (((EditText) findViewById(R.id.txtCPF)).getText().toString().isEmpty() ||
+        if (((EditText) findViewById(R.id.txtCNPJ)).getText().toString().isEmpty() ||
                 ((EditText) findViewById(R.id.txtTelCont)).getText().toString().isEmpty() ||
                 ((EditText) findViewById(R.id.txtTelCel)).getText().toString().isEmpty()) {
             ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroVazio);
-        } else {
-            new CadastrarPF().execute();
+        } else if(!Static.validarCNPJ(((EditText) findViewById(R.id.txtCNPJ)).getText().toString())) {
+            ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroCNPJ);
+        } else{
+            new CadastrarPJ().execute();
         }
     }
 
-    private class CadastrarPF extends AsyncTask<String, Void, Void> {
+    private class CadastrarPJ extends AsyncTask<String, Void, Void> {
         private ProgressDialog dialog;
-        private String nome;
-        private Date datanasc;
-        private Date datainsc;
-        private char sexo;
-        private String CPF;
-        private String telCont;
-        private String telCel;
+        private String razao;
+        private String cnpj;
+        private String inscricao;
+        private String responsavel;
+        private char infotribut;
+        private String telcontat;
+        private String telcel;
+        private Date datainscricao;
+        private Usuario usu;
 
         @Override
         protected void onPreExecute() {
+
             dialog = new ProgressDialog(CriarPerfilpj2Activity.this);
 
-            nome = dados.getString("nome");
-            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+            razao = dados.getString("razao");
+            infotribut = dados.getString("tributo").charAt(0);
+            responsavel = dados.getString("responsavel");
+            inscricao = dados.getString("inscricao");
+            cnpj = ((EditText) findViewById(R.id.txtCNPJ)).getText().toString();
+            telcontat = ((EditText) findViewById(R.id.txtTelCont)).getText().toString();
+            telcel = ((EditText) findViewById(R.id.txtTelCel)).getText().toString();
             try {
 
-                datanasc = format.parse(dados.getString("dataNasc"));
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+                Date data = new Date();
+                String data2 = df.format(data);
+                datainscricao = df.parse(data2);
+
+
+                dialog.show();
             } catch (Exception e) {
                 ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroCadastro);
                 Log.d("erro", e.getMessage());
             }
-            datainsc = new Date();
-            sexo = dados.getString("sexo").charAt(0);
-            CPF = ((EditText) findViewById(R.id.txtCPF)).getText().toString();
-            telCont = ((EditText) findViewById(R.id.txtTelCont)).getText().toString();
-            telCel = ((EditText) findViewById(R.id.txtTelCel)).getText().toString();
 
-            dialog.show();
         }
 
-        @Override
-        protected void onPostExecute(Void v) {
-            dialog.dismiss();
-            dialog = null;
-            finish();
-        }
 
         @Override
         protected Void doInBackground(String... params) {
             try {
-                Usuario usu = new Usuario();
                 usu = serviceUsu.getById(dados.getInt("id"));
-                PessoaFisica pf = new PessoaFisica(nome, sexo, datanasc,
-                        CPF, telCel, telCont,
-                        datainsc, usu);
-                ;
-                service.post(pf);
-
+                PessoaJuridica pj = new PessoaJuridica(razao, cnpj, inscricao, responsavel,
+                        infotribut, telcontat, telcel, datainscricao, usu);
+                service.post(pj);
             } catch (RuntimeException e) {
                 Log.d("erro", e.getMessage());
             }
+
             return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void v) {
+
+            Intent i = new Intent(CriarPerfilpj2Activity.this, PrincipalActivity.class);
+
+            Bundle dadosUsu = new Bundle();
+            dadosUsu.putString("usuario", usu.getUsuario());
+            dadosUsu.putString("email", usu.getEmail());
+            dadosUsu.putInt("id", usu.getId());
+            i.putExtras(dadosUsu);
+
+            startActivity(i);
+            dialog.dismiss();
+            dialog = null;
+            finish();
         }
     }
 }

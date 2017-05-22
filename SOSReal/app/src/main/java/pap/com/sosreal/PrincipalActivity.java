@@ -19,8 +19,9 @@ public class PrincipalActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         this.dados = i.getExtras();
-        ((Button) findViewById(R.id.btnNovaDoacao)).setText(dados.getString("usuario"));
-        ((Button) findViewById(R.id.btnConsultarDoacao)).setText(Integer.toString(dados.getInt("id")));
+        //((Button) findViewById(R.id.btnNovaDoacao)).setText(dados.getString("usuario"));
+        //((Button) findViewById(R.id.btnConsultarDoacao)).setText(Integer.toString(dados.getInt("id")));
+
     }
 
     @Override

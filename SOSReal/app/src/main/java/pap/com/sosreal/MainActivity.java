@@ -37,20 +37,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public boolean verificaUsuario() {
-        EditText usuario = (EditText) findViewById(R.id.txtUsuario);
-        EditText senha = (EditText) findViewById(R.id.txtSenha);
-
-
-        try {
-            usu = new UsuarioService().buscarPorUsuESenha(usuario.getText().toString(), senha.getText().toString());
-            return true;
-
-        } catch (IllegalArgumentException e) {
-            return false;
-        }
-    }
-
     public void criarConta(View view) {
 
         Intent i = new Intent(this, CriarUsuarioActivity.class);
@@ -101,7 +87,8 @@ public class MainActivity extends AppCompatActivity {
                 dados.putString("email", usu.getEmail());
                 dados.putInt("id", usu.getId());
 
-                Intent i = new Intent(MainActivity.this, CriarPerfilpf1Activity.class);
+                Intent i = new Intent(MainActivity.this, CriarPerfilpj1Activity.class);
+
                 i.putExtras(dados);
                 startActivity(i);
                 dialog.dismiss();

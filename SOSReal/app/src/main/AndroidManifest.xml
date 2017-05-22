@@ -22,6 +22,8 @@
         <activity android:name=".CriarUsuarioActivity"/>
         <activity android:name=".CriarPerfilpf1Activity"/>
         <activity android:name=".CriarPerfilpf2Activity"/>
+        <activity android:name=".CriarPerfilpj1Activity"/>
+        <activity android:name=".CriarPerfilpj2Activity"/>
         <activity android:name=".SenhaAleatoriaActivity"/>
         <activity android:name=".TrocarSenhaActivity"/>
 

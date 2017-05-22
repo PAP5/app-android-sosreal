@@ -8,22 +8,22 @@
 
 
     <TextView
-        android:id="@+id/lblCPF"
+        android:id="@+id/lblCNPJ"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:text="@string/CPF"
+        android:text="@string/CNPJ"
         android:textSize="20dp"
         android:layout_below="@id/txtSobrenome"/>
 
     <EditText
-        android:id="@+id/txtCPF"
+        android:id="@+id/txtCNPJ"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
         android:inputType="number"
-        android:layout_below="@id/lblCPF"/>
+        android:layout_below="@id/lblCNPJ"/>
 
     <TextView
         android:id="@+id/lblTelCont"
@@ -33,7 +33,7 @@
         android:layout_marginLeft="10dp"
         android:text="@string/telCont"
         android:textSize="20dp"
-        android:layout_below="@id/txtCPF"/>
+        android:layout_below="@id/txtCNPJ"/>
 
     <EditText
         android:id="@+id/txtTelCont"

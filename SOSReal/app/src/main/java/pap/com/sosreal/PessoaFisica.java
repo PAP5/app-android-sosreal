@@ -8,12 +8,13 @@ public class PessoaFisica {
     private Date datanasc;
     private String cpf;
     private String telcel;
-    private String telcont;
+    private String telcontat;
     private Date datainscricao;
     private Usuario usuario;
 
     public PessoaFisica(String nome, char sexo, Date datanasc,
-                        String cpf, String telcel, String telcont,
+                        String cpf, String telcel, String telcontat,
+
                         Date datainscricao, Usuario usuario) {
 
         this.nome = nome;
@@ -21,7 +22,7 @@ public class PessoaFisica {
         this.datanasc = datanasc;
         this.cpf = cpf;
         this.telcel = telcel;
-        this.telcont = telcont;
+        this.telcontat = telcontat;
         this.datainscricao = datainscricao;
         this.usuario = usuario;
 
@@ -71,11 +72,11 @@ public class PessoaFisica {
     }
 
     public String gettelcont() {
-        return telcont;
+        return telcontat;
     }
 
-    public void settelcont(String telcont) {
-        this.telcont = telcont;
+    public void settelcont(String telcontat) {
+        this.telcontat = telcontat;
     }
 
     public Date getdatainscricao() {
