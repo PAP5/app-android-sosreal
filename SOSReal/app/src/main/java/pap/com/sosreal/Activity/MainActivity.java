@@ -19,8 +19,8 @@ import pap.com.sosreal.Services.UsuarioService;
 
 public class MainActivity extends AppCompatActivity {
     private Usuario usu = new Usuario();
-    private UsuarioService service = new UsuarioService();
-    private InstituicaoService insService = new InstituicaoService();
+    private UsuarioService service = UsuarioService.getInstance();
+    private InstituicaoService insService = InstituicaoService.getInstance();
     String usuarioTxtConteudo;
     String senhaTxtConteudo;
 

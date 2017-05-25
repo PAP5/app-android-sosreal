@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import pap.com.sosreal.BO.PessoaJuridica;
+import pap.com.sosreal.Services.PessoaFisicaService;
 import pap.com.sosreal.Services.PessoaJuridicaService;
 import pap.com.sosreal.R;
 import pap.com.sosreal.Static;
@@ -23,8 +24,8 @@ import pap.com.sosreal.Services.UsuarioService;
 
 public class CriarPerfilpj2Activity extends AppCompatActivity {
     private Bundle dados;
-    private PessoaJuridicaService service = new PessoaJuridicaService();
-    private UsuarioService serviceUsu = new UsuarioService();
+    private PessoaJuridicaService service = PessoaJuridicaService.getInstance();
+    private UsuarioService serviceUsu = UsuarioService.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

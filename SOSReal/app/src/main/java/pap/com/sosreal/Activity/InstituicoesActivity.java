@@ -20,7 +20,7 @@ import pap.com.sosreal.R;
 public class InstituicoesActivity extends AppCompatActivity {
     private List<Instituicao> instituicoes = new ArrayList<>();
     private InstituicaoArrayAdapter adapter;
-    private InstituicaoService service = new InstituicaoService();
+    private InstituicaoService service = InstituicaoService.getInstance();
     private Bundle dados;
     private Instituicao ins = new Instituicao();
 

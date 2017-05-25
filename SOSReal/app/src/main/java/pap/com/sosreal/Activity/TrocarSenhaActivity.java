@@ -19,7 +19,7 @@ import pap.com.sosreal.Services.UsuarioService;
 
 public class TrocarSenhaActivity extends AppCompatActivity {
     private Bundle dados;
-    private UsuarioService service = new UsuarioService();
+    private UsuarioService service = UsuarioService.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

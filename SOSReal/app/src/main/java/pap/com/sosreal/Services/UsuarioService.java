@@ -20,7 +20,7 @@ import pap.com.sosreal.BO.Usuario;
 
 public class UsuarioService {
     private Usuario usu = new Usuario();
-
+    private static UsuarioService instance = null;
     private static String URL = "http://pap5.ga/ws/usuario";
 
     public List<Usuario> getAll() {
@@ -187,6 +187,13 @@ public class UsuarioService {
         } finally {
             urlConnection.disconnect();
         }
+    }
+
+    public static UsuarioService getInstance() {
+        if(instance == null) {
+            instance = new UsuarioService();
+        }
+        return instance;
     }
 }
 

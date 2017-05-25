@@ -23,8 +23,8 @@ import pap.com.sosreal.Services.UsuarioService;
 
 public class CriarPerfilpf2Activity extends AppCompatActivity {
     private Bundle dados;
-    private PessoaFisicaService service = new PessoaFisicaService();
-    private UsuarioService serviceUsu = new UsuarioService();
+    private PessoaFisicaService service = PessoaFisicaService.getInstance();
+    private UsuarioService serviceUsu = UsuarioService.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

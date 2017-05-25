@@ -6,10 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 
 import pap.com.sosreal.R;
 
-/**
- * Created by User on 25/05/2017.
- */
-
 public class NovaDoacaoActivity extends AppCompatActivity{
     Bundle dadosUsu;
     @Override

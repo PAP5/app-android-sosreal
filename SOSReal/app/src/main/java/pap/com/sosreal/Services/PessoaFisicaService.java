@@ -22,7 +22,7 @@ import pap.com.sosreal.BO.PessoaFisica;
 
 public class PessoaFisicaService {
     private PessoaFisica pf = new PessoaFisica();
-
+    private static PessoaFisicaService instance = null;
     private static String URL = "http://pap5.ga/ws/pf";
 
     public List<PessoaFisica> getAll() {
@@ -114,6 +114,14 @@ public class PessoaFisicaService {
         } finally {
             urlConnection.disconnect();
         }
+    }
+
+
+    public static PessoaFisicaService getInstance() {
+        if(instance == null) {
+            instance = new PessoaFisicaService();
+        }
+        return instance;
     }
 }
 

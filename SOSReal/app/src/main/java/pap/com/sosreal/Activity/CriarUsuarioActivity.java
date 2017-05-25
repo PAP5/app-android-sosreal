@@ -17,7 +17,7 @@ import pap.com.sosreal.Services.UsuarioService;
 
 
 public class CriarUsuarioActivity extends AppCompatActivity {
-    private UsuarioService service = new UsuarioService();
+    private UsuarioService service = UsuarioService.getInstance();
 
 
     @Override

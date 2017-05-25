@@ -15,6 +15,7 @@ import pap.com.sosreal.BO.Instituicao;
 
 public class InstituicaoService {
     private Instituicao ins = new Instituicao();
+    private static InstituicaoService instance = null;
 
     private static String URL = "http://pap5.ga/ws/instituicao";
 
@@ -61,6 +62,13 @@ public class InstituicaoService {
             urlConnection.disconnect();
         }
         return ins;
+    }
+
+    public static InstituicaoService getInstance() {
+        if(instance == null) {
+            instance = new InstituicaoService();
+        }
+        return instance;
     }
 
 
