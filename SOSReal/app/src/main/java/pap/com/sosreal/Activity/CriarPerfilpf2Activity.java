@@ -13,7 +13,9 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import pap.com.sosreal.BO.Instituicao;
 import pap.com.sosreal.BO.PessoaFisica;
+import pap.com.sosreal.Services.InstituicaoService;
 import pap.com.sosreal.Services.PessoaFisicaService;
 import pap.com.sosreal.R;
 import pap.com.sosreal.Static;
@@ -25,6 +27,8 @@ public class CriarPerfilpf2Activity extends AppCompatActivity {
     private Bundle dados;
     private PessoaFisicaService service = PessoaFisicaService.getInstance();
     private UsuarioService serviceUsu = UsuarioService.getInstance();
+    private InstituicaoService insService = InstituicaoService.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +62,100 @@ public class CriarPerfilpf2Activity extends AppCompatActivity {
         private String telCel;
         private Bundle dadosUsu = new Bundle();
         private Usuario usu;
+        private PessoaFisica pf2;
+
+        class PFnovo {
+            private String nome;
+            private char sexo;
+            private Date datanasc;
+            private String cpf;
+            private String telcel;
+            private String telcontat;
+            private Date datainscricao;
+            private Usuario usuario;
+
+            public PFnovo(String nome, char sexo, Date datanasc,
+                          String cpf, String telcel, String telcontat,
+                          Date datainscricao, Usuario usuario) {
+
+                this.nome = nome;
+                this.sexo = sexo;
+                this.datanasc = datanasc;
+                this.cpf = cpf;
+                this.telcel = telcel;
+                this.telcontat = telcontat;
+                this.datainscricao = datainscricao;
+                this.usuario = usuario;
+
+            }
+
+            public PFnovo() {
+            }
+
+            public String getNome() {
+                return nome;
+            }
+
+            public void setNome(String nome) {
+                this.nome = nome;
+            }
+
+            public char getSexo() {
+                return sexo;
+            }
+
+            public void setSexo(char sexo) {
+                this.sexo = sexo;
+            }
+
+            public Date getdatanasc() {
+                return datanasc;
+            }
+
+            public void setdatanasc(Date datanasc) {
+                this.datanasc = datanasc;
+            }
+
+            public String getcpf() {
+                return cpf;
+            }
+
+            public void setcpf(String cpf) {
+                this.cpf = cpf;
+            }
+
+            public String gettelcel() {
+                return telcel;
+            }
+
+            public void settelcel(String telcel) {
+                this.telcel = telcel;
+            }
+
+            public String gettelcont() {
+                return telcontat;
+            }
+
+            public void settelcont(String telcontat) {
+                this.telcontat = telcontat;
+            }
+
+            public Date getdatainscricao() {
+                return datainscricao;
+            }
+
+            public void setdatainscricao(Date datainscricao) {
+                this.datainscricao = datainscricao;
+            }
+
+            public Usuario getUsuario() {
+                return usuario;
+            }
+
+            public void setUsuario(Usuario usuario) {
+                this.usuario = usuario;
+            }
+        }
 
         @Override
         protected void onPreExecute() {
@@ -94,11 +192,12 @@ public class CriarPerfilpf2Activity extends AppCompatActivity {
         protected Void doInBackground(String... params) {
             try {
                 usu = serviceUsu.getById(dados.getInt("id"));
-                PessoaFisica pf = new PessoaFisica(nome, sexo, datanasc,
+                PFnovo pf = new PFnovo(nome, sexo, datanasc,
                         CPF, telCel, telCont,
                         datainsc, usu);
                 service.post(pf);
 
+                //pf2 = (PessoaFisica) insService.getByIdUsuario(usu.getId());
 
             } catch (RuntimeException e) {
                 Log.d("erro", e.getMessage());
@@ -117,6 +216,7 @@ public class CriarPerfilpf2Activity extends AppCompatActivity {
             dadosUsu.putString("email", usu.getEmail());
             dadosUsu.putInt("id", usu.getId());
             dadosUsu.putBoolean("temPF", true);
+            //dadosUsu.putInt("idPerfil", pf2.getId());
             i.putExtras(dadosUsu);
 
             startActivity(i);

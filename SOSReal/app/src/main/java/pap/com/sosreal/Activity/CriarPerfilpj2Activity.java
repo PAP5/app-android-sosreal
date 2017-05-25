@@ -13,7 +13,9 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import pap.com.sosreal.BO.Instituicao;
 import pap.com.sosreal.BO.PessoaJuridica;
+import pap.com.sosreal.Services.InstituicaoService;
 import pap.com.sosreal.Services.PessoaFisicaService;
 import pap.com.sosreal.Services.PessoaJuridicaService;
 import pap.com.sosreal.R;
@@ -26,6 +28,7 @@ public class CriarPerfilpj2Activity extends AppCompatActivity {
     private Bundle dados;
     private PessoaJuridicaService service = PessoaJuridicaService.getInstance();
     private UsuarioService serviceUsu = UsuarioService.getInstance();
+    private InstituicaoService insService = InstituicaoService.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +62,109 @@ public class CriarPerfilpj2Activity extends AppCompatActivity {
         private String telcel;
         private Date datainscricao;
         private Usuario usu;
+        private PessoaJuridica pj2;
+
+        class PJnovo {
+            private String razao;
+            private String cnpj;
+            private String inscricao;
+            private String responsavel;
+            private char infotribut;
+            private String telcontat;
+            private String telcel;
+            private Date datainscricao;
+            private Usuario usuario;
+
+            public PJnovo(String razao, String cnpj, String inscricao, String responsavel,
+                                  char infotribut, String telcontat, String telcel, Date datainscricao,
+                                  Usuario usuario) {
+                this.razao = razao;
+                this.cnpj = cnpj;
+                this.inscricao = inscricao;
+                this.responsavel = responsavel;
+                this.infotribut = infotribut;
+                this.telcontat = telcontat;
+                this.telcel = telcel;
+                this.datainscricao = datainscricao;
+                this.usuario = usuario;
+            }
+
+            public PJnovo() {
+            }
+
+
+            public String getRazao() {
+                return razao;
+            }
+
+            public void setRazao(String razao) {
+                this.razao = razao;
+            }
+
+            public String getCnpj() {
+                return cnpj;
+            }
+
+            public void setCnpj(String cnpj) {
+                this.cnpj = cnpj;
+            }
+
+            public String getInscricao() {
+                return inscricao;
+            }
+
+            public void setInscricao(String inscricao) {
+                this.inscricao = inscricao;
+            }
+
+            public String getResponsavel() {
+                return responsavel;
+            }
+
+            public void setResponsavel(String responsavel) {
+                this.responsavel = responsavel;
+            }
+
+            public char getInfotribut() {
+                return infotribut;
+            }
+
+            public void setInfotribut(char infotribut) {
+                this.infotribut = infotribut;
+            }
+
+            public String getTelcontat() {
+                return telcontat;
+            }
+
+            public void setTelcontat(String telcontat) {
+                this.telcontat = telcontat;
+            }
+
+            public String getTelcel() {
+                return telcel;
+            }
+
+            public void setTelcel(String telcel) {
+                this.telcel = telcel;
+            }
+
+            public Date getDatainscricao() {
+                return datainscricao;
+            }
+
+            public void setDatainscricao(Date datainscricao) {
+                this.datainscricao = datainscricao;
+            }
+
+            public Usuario getUsuario() {
+                return usuario;
+            }
+
+            public void setUsuario(Usuario usuario) {
+                this.usuario = usuario;
+            }
+        }
 
         @Override
         protected void onPreExecute() {
@@ -93,9 +199,11 @@ public class CriarPerfilpj2Activity extends AppCompatActivity {
         protected Void doInBackground(String... params) {
             try {
                 usu = serviceUsu.getById(dados.getInt("id"));
-                PessoaJuridica pj = new PessoaJuridica(razao, cnpj, inscricao, responsavel,
+                PJnovo pj = new PJnovo(razao, cnpj, inscricao, responsavel,
                         infotribut, telcontat, telcel, datainscricao, usu);
                 service.post(pj);
+
+               // pj2 = (PessoaJuridica) insService.getByIdUsuario(usu.getId());
             } catch (RuntimeException e) {
                 Log.d("erro", e.getMessage());
             }
@@ -113,6 +221,7 @@ public class CriarPerfilpj2Activity extends AppCompatActivity {
             dadosUsu.putString("email", usu.getEmail());
             dadosUsu.putInt("id", usu.getId());
             dadosUsu.putBoolean("temPJ", true);
+            //dadosUsu.putInt("idPerfil", pj2.getId());
             i.putExtras(dadosUsu);
 
             startActivity(i);

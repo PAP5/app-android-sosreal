@@ -12,6 +12,8 @@ import android.widget.TextView;
 import android.view.View;
 
 import pap.com.sosreal.BO.Instituicao;
+import pap.com.sosreal.BO.PessoaFisica;
+import pap.com.sosreal.BO.PessoaJuridica;
 import pap.com.sosreal.BO.Usuario;
 import pap.com.sosreal.R;
 import pap.com.sosreal.Services.InstituicaoService;
@@ -76,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
         private ProgressDialog dialog;
         private boolean temPF;
         private boolean temPJ;
+        private PessoaFisica pf;
+        private PessoaJuridica pj;
         private Usuario usu2 = new Usuario();
         private Instituicao ins = new Instituicao();
         @Override
@@ -97,7 +101,11 @@ public class MainActivity extends AppCompatActivity {
                 dados.putInt("id", usu.getId());
                 dados.putBoolean("temPF", temPF);
                 dados.putBoolean("temPJ", temPJ);
-
+                //if(pf != null){
+                 //   dados.putInt("idPerfil", pf.getId());
+                //}else if(pj != null){
+                //    dados.putInt("idPerfil", pj.getId());
+               // }
                 Intent i = new Intent(MainActivity.this, PrincipalActivity.class);
 
                 i.putExtras(dados);
@@ -106,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
                 dialog = null;
                 finish();
             } else {
-                Log.d("passou", "passou");
                 ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroLogin);
                 dialog.dismiss();
                 dialog = null;
@@ -121,11 +128,11 @@ public class MainActivity extends AppCompatActivity {
                 temPF = service.validarPerfilPF(usu2.getId());
                 temPJ = service.validarPerfilPJ(usu2.getId());
 
-                if (temPF == true) {
-                    //ins = insService.getByIdUsuario(usu2.getId());
-                } else if (temPJ == true) {
-
-                }
+                //if (temPF == true) {
+                 //   pf = (PessoaFisica) insService.getByIdUsuario(usu2.getId());
+               // }else if(temPJ == true){
+                   // pj = (PessoaJuridica) insService.getByIdUsuario(usu2.getId());
+                //}
                 return usu2;
 
             } catch (RuntimeException e) {

@@ -4,6 +4,7 @@ package pap.com.sosreal.BO;
 import java.util.Date;
 
 public class PessoaJuridica {
+    private int id;
     private String razao;
     private String cnpj;
     private String inscricao;
@@ -29,6 +30,14 @@ public class PessoaJuridica {
     }
 
     public PessoaJuridica() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getRazao() {

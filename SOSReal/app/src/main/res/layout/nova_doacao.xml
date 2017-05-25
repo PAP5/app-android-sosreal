@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:text="@string/nome"
+        android:text="@string/valor"
         android:textSize="20dp"
         android:layout_below="@id/logo"/>
 
@@ -21,6 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
+        android:inputType="numberDecimal"
         android:layout_below="@id/lblValor"/>
 
 
@@ -36,16 +37,16 @@
         android:layout_below="@id/txtValor"/>
 
     <Button
-        android:id="@+id/btnProximo"
+        android:id="@+id/btnConfirmar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/proximo"
+        android:text="@string/confirmar"
         android:layout_marginTop="5dp"
         android:layout_below="@id/lblErro"
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorBranco"
         android:layout_centerInParent="true"
-        android:onClick="proximo"/>
+        android:onClick="confirmar"/>
 
 
 

@@ -10,7 +10,7 @@ import pap.com.sosreal.R;
 
 public class DetalhesInstituicaoActivity extends AppCompatActivity{
     private Bundle dadosUsuario;
-
+    private Bundle dadosIns;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,7 +19,7 @@ public class DetalhesInstituicaoActivity extends AppCompatActivity{
         Intent i = getIntent();
         Bundle dados = i.getExtras();
         dadosUsuario = dados.getBundle("bundleUsuario");
-        Bundle dadosIns = dados.getBundle("bundleInstituicao");
+        dadosIns = dados.getBundle("bundleInstituicao");
 
         ((EditText) findViewById(R.id.txtCNPJ)).setText(dadosIns.getString("cnpj"));
         ((EditText) findViewById(R.id.txtDescricao)).setText(dadosIns.getString("descricao"));
@@ -32,6 +32,10 @@ public class DetalhesInstituicaoActivity extends AppCompatActivity{
 
     public void doar(View view){
         Intent doar = new Intent(DetalhesInstituicaoActivity.this, NovaDoacaoActivity.class);
-
+        Bundle dados = new Bundle();
+        dados.putBundle("bundleUsuario" , dadosUsuario);
+        dados.putBundle("bundleInstituicao" , dadosIns);
+        doar.putExtras(dados);
+        startActivity(doar);
     }
 }

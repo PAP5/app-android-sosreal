@@ -43,6 +43,10 @@
     <string name="tel">Telefone</string>
     <string name="infoTribu">Informação tributo</string>
     <string name="doar">Doar</string>
+    <string name="valor">Valor</string>
+    <string name="sucessoDoacao">A doação foi completada com sucesso! A instituição agradece!</string>
+    <string name="finalizar">Finalizar</string>
+    <string name="instituicao">Instituição</string>
 
     <string-array name="sexo_array">
         <item>Selecione</item>

@@ -9,29 +9,29 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import pap.com.sosreal.BO.Instituicao;
+import pap.com.sosreal.BO.Doacao;
 import pap.com.sosreal.R;
 
-public class InstituicaoArrayAdapter extends ArrayAdapter<Instituicao> {
+public class DoacaoArrayAdapter extends ArrayAdapter<Doacao> {
     private Context context;
-    private List<Instituicao> instituicaos;
+    private List<Doacao> doacoes;
 
-    public InstituicaoArrayAdapter(Context context, int resource, List<Instituicao> objects) {
+    public DoacaoArrayAdapter(Context context, int resource, List<Doacao> objects) {
         super(context, resource, objects);
         this.context = context;
-        this.instituicaos = objects;
+        this.doacoes = objects;
     }
 
     public View getView(final int position, View convertView, final ViewGroup parent){
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View linha = inflater.inflate(R.layout.listview, parent, false);
-        TextView razao = (TextView) linha.findViewById(R.id.lblRazao);
-        TextView descricao = (TextView) linha.findViewById(R.id.lblDescricao);
+        TextView instituicao = (TextView) linha.findViewById(R.id.lblRazao);
+        TextView valor = (TextView) linha.findViewById(R.id.lblDescricao);
 
-        Instituicao i = instituicaos.get(position);
-        razao.setText(i.getRazao());
-        descricao.setText(i.getDescricao());
+        Doacao doacao = doacoes.get(position);
+        instituicao.setText((doacao.getIns()).getRazao());
+        valor.setText("R$: " + String.valueOf(doacao.getValordoado()));
 
         return linha;
     }

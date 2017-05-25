@@ -3,6 +3,7 @@ package pap.com.sosreal.BO;
 import java.util.Date;
 
 public class PessoaFisica {
+    private int id;
     private String nome;
     private char sexo;
     private Date datanasc;
@@ -14,7 +15,6 @@ public class PessoaFisica {
 
     public PessoaFisica(String nome, char sexo, Date datanasc,
                         String cpf, String telcel, String telcontat,
-
                         Date datainscricao, Usuario usuario) {
 
         this.nome = nome;
@@ -29,6 +29,14 @@ public class PessoaFisica {
     }
 
     public PessoaFisica() {
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNome() {

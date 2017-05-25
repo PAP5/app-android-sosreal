@@ -67,6 +67,8 @@ public class PrincipalActivity extends AppCompatActivity {
     }
 
     public void consultarDoacao(View view){
-
+        Intent consulatDoacoes = new Intent(PrincipalActivity.this, ConsultarDoacoesActivity.class);
+        consulatDoacoes.putExtras(dados);
+        startActivity(consulatDoacoes);
     }
 }
