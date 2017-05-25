@@ -44,7 +44,10 @@ public class CriarPerfilpj2Activity extends AppCompatActivity {
                 ((EditText) findViewById(R.id.txtTelCont)).getText().toString().isEmpty() ||
                 ((EditText) findViewById(R.id.txtTelCel)).getText().toString().isEmpty()) {
             ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroVazio);
-        } else if(!Static.validarCNPJ(((EditText) findViewById(R.id.txtCNPJ)).getText().toString())) {
+        } else if(((EditText) findViewById(R.id.txtCNPJ)).getText().toString().length()<12){
+            ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroCNPJ);
+        }
+        else if(!Static.validarCNPJ(((EditText) findViewById(R.id.txtCNPJ)).getText().toString())) {
             ((TextView) findViewById(R.id.lblErro)).setText(R.string.erroCNPJ);
         } else{
             new CadastrarPJ().execute();
