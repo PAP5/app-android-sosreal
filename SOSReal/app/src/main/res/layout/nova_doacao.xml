@@ -4,61 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="pap.com.sosreal.Activity.SenhaAleatoriaActivity">
+    tools:context="pap.com.sosreal.Activity.NovaDoacaoActivity">
 
     <TextView
-        android:id="@+id/lblExplicar"
+        android:id="@+id/lblValor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginLeft="10dp"
-        android:text="@string/explicarEsqueciSenha"
+        android:text="@string/nome"
         android:textSize="20dp"
-        android:textColor="@color/colorVermelho"
-        />
-
-    <TextView
-        android:id="@+id/lblEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="10dp"
-        android:text="@string/email"
-        android:layout_below="@id/lblExplicar"
-        android:textSize="20dp"
-        />
+        android:layout_below="@id/logo"/>
 
     <EditText
-        android:id="@+id/txtEmail"
+        android:id="@+id/txtValor"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="5dp"
-        android:layout_below="@id/lblEmail"/>
+        android:layout_below="@id/lblValor"/>
+
 
     <TextView
         android:id="@+id/lblErro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtEmail"
-        android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp"
         android:text=""
         android:textColor="@color/colorVermelho"
-        android:textSize="18dp" />
+        android:textSize="18dp"
+        android:layout_below="@id/txtValor"/>
 
     <Button
-        android:id="@+id/btnConfirmar"
+        android:id="@+id/btnProximo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/confirmar"
-        android:layout_marginTop="15dp"
+        android:text="@string/proximo"
+        android:layout_marginTop="5dp"
         android:layout_below="@id/lblErro"
         android:background="@color/colorPrimaryDark"
         android:textColor="@color/colorBranco"
         android:layout_centerInParent="true"
-        android:onClick="trocarSenha"/>
-
-
+        android:onClick="proximo"/>
 
 
 

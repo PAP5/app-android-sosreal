@@ -1,4 +1,4 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Activity;
 
 
 import android.app.Activity;
@@ -11,6 +11,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import pap.com.sosreal.R;
+import pap.com.sosreal.Static;
+import pap.com.sosreal.BO.Usuario;
+import pap.com.sosreal.Services.UsuarioService;
 
 public class TrocarSenhaActivity extends AppCompatActivity {
     private Bundle dados;

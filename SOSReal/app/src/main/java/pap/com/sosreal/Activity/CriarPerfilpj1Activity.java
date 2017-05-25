@@ -1,4 +1,4 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import pap.com.sosreal.R;
 
 public class CriarPerfilpj1Activity extends AppCompatActivity {
     private Bundle dados = new Bundle();

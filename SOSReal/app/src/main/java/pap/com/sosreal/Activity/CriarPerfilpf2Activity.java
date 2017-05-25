@@ -1,4 +1,4 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -7,12 +7,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import pap.com.sosreal.BO.PessoaFisica;
+import pap.com.sosreal.Services.PessoaFisicaService;
+import pap.com.sosreal.R;
+import pap.com.sosreal.Static;
+import pap.com.sosreal.BO.Usuario;
+import pap.com.sosreal.Services.UsuarioService;
 
 
 public class CriarPerfilpf2Activity extends AppCompatActivity {
@@ -61,9 +67,9 @@ public class CriarPerfilpf2Activity extends AppCompatActivity {
             nome = dados.getString("nome");
             SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
             try {
-                Date penis = format.parse(dados.getString("dataNasc"));
+                Date dataTemp = format.parse(dados.getString("dataNasc"));
                 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-                String data = df.format(penis);
+                String data = df.format(dataTemp);
                 datanasc = df.parse(data);
 
                 Date vagina = new Date();
@@ -110,6 +116,7 @@ public class CriarPerfilpf2Activity extends AppCompatActivity {
             dadosUsu.putString("usuario", usu.getUsuario());
             dadosUsu.putString("email", usu.getEmail());
             dadosUsu.putInt("id", usu.getId());
+            dadosUsu.putBoolean("temPF", true);
             i.putExtras(dadosUsu);
 
             startActivity(i);

@@ -1,4 +1,4 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -11,9 +11,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.view.View;
 
+import pap.com.sosreal.BO.Instituicao;
+import pap.com.sosreal.BO.Usuario;
+import pap.com.sosreal.R;
+import pap.com.sosreal.Services.InstituicaoService;
+import pap.com.sosreal.Services.UsuarioService;
+
 public class MainActivity extends AppCompatActivity {
     private Usuario usu = new Usuario();
     private UsuarioService service = new UsuarioService();
+    private InstituicaoService insService = new InstituicaoService();
     String usuarioTxtConteudo;
     String senhaTxtConteudo;
 
@@ -65,10 +72,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private class CarregarUsuario extends AsyncTask<String, String, Usuario> {
         private ProgressDialog dialog;
-
+        private boolean temPF;
+        private boolean temPJ;
+        private Usuario usu2 = new Usuario();
+        private Instituicao ins = new Instituicao();
         @Override
         protected void onPreExecute() {
             dialog = new ProgressDialog(MainActivity.this);
@@ -86,8 +95,10 @@ public class MainActivity extends AppCompatActivity {
                 dados.putString("usuario", usu.getUsuario());
                 dados.putString("email", usu.getEmail());
                 dados.putInt("id", usu.getId());
+                dados.putBoolean("temPF", temPF);
+                dados.putBoolean("temPJ", temPJ);
 
-                Intent i = new Intent(MainActivity.this, CriarPerfilpj1Activity.class);
+                Intent i = new Intent(MainActivity.this, PrincipalActivity.class);
 
                 i.putExtras(dados);
                 startActivity(i);
@@ -106,8 +117,18 @@ public class MainActivity extends AppCompatActivity {
         @Override
         protected Usuario doInBackground(String... params) {
             try {
-                return service.getByUsuarioESenha(usuarioTxtConteudo, senhaTxtConteudo);
-            }catch (RuntimeException e){
+                usu2 = service.getByUsuarioESenha(usuarioTxtConteudo, senhaTxtConteudo);
+                temPF = service.validarPerfilPF(usu2.getId());
+                temPJ = service.validarPerfilPJ(usu2.getId());
+
+                if (temPF == true) {
+                    //ins = insService.getByIdUsuario(usu2.getId());
+                } else if (temPJ == true) {
+
+                }
+                return usu2;
+
+            } catch (RuntimeException e) {
                 return null;
             }
         }

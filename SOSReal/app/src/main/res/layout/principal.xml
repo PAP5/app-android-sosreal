@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="pap.com.sosreal.PrincipalActivity">
+    tools:context="pap.com.sosreal.Activity.PrincipalActivity">
     <Button
         android:id="@+id/btnNovaDoacao"
         android:layout_width="300dp"

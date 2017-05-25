@@ -1,4 +1,4 @@
-package pap.com.sosreal;
+package pap.com.sosreal.BO;
 
 import java.util.Date;
 

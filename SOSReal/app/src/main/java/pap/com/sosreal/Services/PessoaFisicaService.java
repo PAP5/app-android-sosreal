@@ -1,4 +1,4 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Services;
 
 
 import android.util.Log;
@@ -17,6 +17,8 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+import pap.com.sosreal.BO.PessoaFisica;
 
 public class PessoaFisicaService {
     private PessoaFisica pf = new PessoaFisica();

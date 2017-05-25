@@ -1,9 +1,11 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
+import pap.com.sosreal.R;
 
 public class SelecionarPfPjActivity extends AppCompatActivity{
     private Bundle dados;
@@ -16,16 +18,18 @@ public class SelecionarPfPjActivity extends AppCompatActivity{
         dados = i.getExtras();
     }
 
-    private void pf(View view){
+    public void pf(View view){
         Intent i = new Intent(this, CriarPerfilpf1Activity.class);
         i.putExtras(dados);
         startActivity(i);
+        finish();
     }
 
-    private void pj(View view){
+    public void pj(View view){
         Intent i = new Intent(this, CriarPerfilpj1Activity.class);
         i.putExtras(dados);
         startActivity(i);
+        finish();
     }
 
 

@@ -1,4 +1,4 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Activity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -7,12 +7,18 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import pap.com.sosreal.BO.PessoaJuridica;
+import pap.com.sosreal.Services.PessoaJuridicaService;
+import pap.com.sosreal.R;
+import pap.com.sosreal.Static;
+import pap.com.sosreal.BO.Usuario;
+import pap.com.sosreal.Services.UsuarioService;
 
 
 public class CriarPerfilpj2Activity extends AppCompatActivity {
@@ -105,6 +111,7 @@ public class CriarPerfilpj2Activity extends AppCompatActivity {
             dadosUsu.putString("usuario", usu.getUsuario());
             dadosUsu.putString("email", usu.getEmail());
             dadosUsu.putInt("id", usu.getId());
+            dadosUsu.putBoolean("temPJ", true);
             i.putExtras(dadosUsu);
 
             startActivity(i);

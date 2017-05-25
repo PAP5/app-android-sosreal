@@ -1,4 +1,4 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
+
+import pap.com.sosreal.R;
 
 
 public class PrincipalActivity extends AppCompatActivity {
@@ -19,9 +20,20 @@ public class PrincipalActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         this.dados = i.getExtras();
-        //((Button) findViewById(R.id.btnNovaDoacao)).setText(dados.getString("usuario"));
-        //((Button) findViewById(R.id.btnConsultarDoacao)).setText(Integer.toString(dados.getInt("id")));
 
+        if(dados.getBoolean("temPF") == false && dados.getBoolean("temPJ") == false){
+            Intent intent = new Intent(this, SelecionarPfPjActivity.class);
+            intent.putExtras(this.dados);
+            startActivity(intent);
+            finish();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Intent i = getIntent();
+        this.dados = i.getExtras();
     }
 
     @Override
@@ -49,13 +61,12 @@ public class PrincipalActivity extends AppCompatActivity {
     }
 
     public void novaDoacao(View view){
-
+        Intent novaDoacao = new Intent(PrincipalActivity.this, InstituicoesActivity.class);
+        novaDoacao.putExtras(dados);
+        startActivity(novaDoacao);
     }
 
     public void consultarDoacao(View view){
 
     }
-
-
-
 }

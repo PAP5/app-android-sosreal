@@ -1,4 +1,4 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Activity;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -11,8 +11,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import pap.com.sosreal.R;
+import pap.com.sosreal.Static;
+import pap.com.sosreal.Services.UsuarioService;
 
 
 public class CriarUsuarioActivity extends AppCompatActivity {

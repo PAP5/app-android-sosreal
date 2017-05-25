@@ -1,7 +1,5 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Services;
 
-
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -18,21 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import pap.com.sosreal.BO.Usuario;
+
 public class UsuarioService {
     private Usuario usu = new Usuario();
-
-    public Usuario buscarPorUsuESenha(String usuario, String senha) throws IllegalArgumentException {
-        usu.setId(1);
-        usu.setEmail("email@email.com");
-        usu.setSenha("loco");
-        usu.setUsuario("loco");
-
-        if (usuario.equals("loco") && senha.equals("loco")) {
-            return usu;
-        } else {
-            throw new IllegalArgumentException("Usuário não encontrado");
-        }
-    }
 
     private static String URL = "http://pap5.ga/ws/usuario";
 
@@ -104,6 +91,56 @@ public class UsuarioService {
 
         URL = "http://pap5.ga/ws/usuario";
         return usu;
+    }
+
+    public boolean validarPerfilPF(int id) {
+        HttpURLConnection urlConnection = null;
+        boolean retorno;
+
+        URL = "http://pap5.ga/ws/pf/usuario";
+        try {
+            URL url = new URL(URL + "/" + id);
+            urlConnection = (HttpURLConnection) url.openConnection();
+
+            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            Scanner s = new Scanner(in);
+            String conteudo = s.useDelimiter("\\A").next();
+
+            Gson gson = new Gson();
+            retorno = gson.fromJson(conteudo, boolean.class);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            urlConnection.disconnect();
+        }
+
+        URL = "http://pap5.ga/ws/usuario";
+        return retorno;
+    }
+
+    public boolean validarPerfilPJ(int id) {
+        HttpURLConnection urlConnection = null;
+        boolean retorno;
+
+        URL = "http://pap5.ga/ws/pj/usuario";
+        try {
+            URL url = new URL(URL + "/" + id);
+            urlConnection = (HttpURLConnection) url.openConnection();
+
+            InputStream in = new BufferedInputStream(urlConnection.getInputStream());
+            Scanner s = new Scanner(in);
+            String conteudo = s.useDelimiter("\\A").next();
+
+            Gson gson = new Gson();
+            retorno = gson.fromJson(conteudo, boolean.class);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            urlConnection.disconnect();
+        }
+
+        URL = "http://pap5.ga/ws/usuario";
+        return retorno;
     }
 
     public void post(Object usuario) {

@@ -1,4 +1,4 @@
-package pap.com.sosreal;
+package pap.com.sosreal.BO;
 
 public class Usuario {
     private int id;

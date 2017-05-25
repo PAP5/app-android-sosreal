@@ -1,8 +1,7 @@
-package pap.com.sosreal;
+package pap.com.sosreal.Activity;
 
 
 import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,14 +11,13 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.TimePicker;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 
-import java.util.Calendar;
+import pap.com.sosreal.R;
+import pap.com.sosreal.Static;
 
 public class CriarPerfilpf1Activity extends AppCompatActivity {
     private DateFormat df = new SimpleDateFormat("dd/MM/yyyy");

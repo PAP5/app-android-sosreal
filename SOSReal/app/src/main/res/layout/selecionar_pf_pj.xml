@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
-    tools:context="pap.com.sosreal.SelecionarPfPjActivity">
+    tools:context="pap.com.sosreal.Activity.SelecionarPfPjActivity">
 
     <TextView
         android:id="@+id/lblUsuario"

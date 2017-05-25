@@ -11,21 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PrincipalActivity"/>
-        <activity android:name=".CriarUsuarioActivity"/>
-        <activity android:name=".CriarPerfilpf1Activity"/>
-        <activity android:name=".CriarPerfilpf2Activity"/>
-        <activity android:name=".CriarPerfilpj1Activity"/>
-        <activity android:name=".CriarPerfilpj2Activity"/>
-        <activity android:name=".SenhaAleatoriaActivity"/>
-        <activity android:name=".TrocarSenhaActivity"/>
+        <activity android:name=".Activity.PrincipalActivity"/>
+        <activity android:name=".Activity.CriarUsuarioActivity"/>
+        <activity android:name=".Activity.CriarPerfilpf1Activity"/>
+        <activity android:name=".Activity.CriarPerfilpf2Activity"/>
+        <activity android:name=".Activity.CriarPerfilpj1Activity"/>
+        <activity android:name=".Activity.CriarPerfilpj2Activity"/>
+        <activity android:name=".Activity.SenhaAleatoriaActivity"/>
+        <activity android:name=".Activity.TrocarSenhaActivity"/>
+        <activity android:name=".Activity.SelecionarPfPjActivity"/>
+        <activity android:name=".Activity.InstituicoesActivity"/>
+        <activity android:name=".Activity.DetalhesInstituicaoActivity"/>
 
 
 

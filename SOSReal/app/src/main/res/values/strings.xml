@@ -39,6 +39,10 @@
     <string name="pf">Física</string>
     <string name="pj">Jurídica</string>
     <string name="selecionarPfPj">Você é uma pessoa</string>
+    <string name="descricao">Descrição</string>
+    <string name="tel">Telefone</string>
+    <string name="infoTribu">Informação tributo</string>
+    <string name="doar">Doar</string>
 
     <string-array name="sexo_array">
         <item>Selecione</item>

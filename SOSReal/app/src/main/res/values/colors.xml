@@ -7,4 +7,5 @@
     <color name="colorBranco">#FFFFFF</color>
     <color name="colorVermelho">#FF0000</color>
     <color name="colorPreto">#000000</color>
+    <color name="colorAzulLista">#e0ebef</color>
 </resources>

@@ -1,5 +1,5 @@
-package pap.com.sosreal;
-
+package pap.com.sosreal.Activity;
+import pap.com.sosreal.*;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
